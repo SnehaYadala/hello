@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    border: 1px solid black;
+}
+
+.parent {
+    display: flex;
+    background-color: aqua;
+}
+
+.parent .content{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
