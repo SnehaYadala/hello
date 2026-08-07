@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Login Page</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                background-color: #2dc7e6;
+                margin: 15px;
+                padding: 10;
+            }
+            h1{
+                text-align: center;
+                color: #141615;
+            }
+            label{
+                display: block;
+                margin: 10px 0 5px;
+            }
+            input{
+                width:100%;
+                padding: 8px;
+                font-size: 16px;
+                box-sizing: border-box;
+                border: 1px solid #9b1382;
+
+            }
+            button{
+    margin-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #69c3d1;
+    color: white;
+    border: 2px solid #169c9c;
+    cursor: pointer;
+    font-weight: bold;
+}
+            .container{
+    max-width:400px;
+    margin:50px auto;
+    padding:20px;
+    background-color:white;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+        </style>
+    </head>
+    <body>
+        <main>
+            <form class="container" id="loginform" method="post">
+            <h1>Login </h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        </main>
+        <script>
+            document.getElementById("loginform").addEventListener("submit",demofunction);    
+            function demofunction(event){
+                event.preventDefault();
+                    alert("Login successful!");
+            
+                
+                
+            }
+
+            </script>
+        
+    </body>
+</html>
