@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f5eaea;
+            text-align: center;
+        }
+
+        .calculator {
+            width: 400px;
+            margin: 50px auto;
+            padding: 25px;
+            background-color: rgb(133, 247, 230);
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .add {
+            background-color: lightgreen;
+            padding: 15px;
+            border: 2px solid rgb(37, 38, 37);
+            border-radius: 10px;
+        }
+
+        .sub {
+            background-color: lightyellow;
+            padding: 15px;
+            border: 2px solid rgb(37, 38, 37);
+            border-radius: 10px;
+        
+        }
+
+        .mul {
+            background-color: lightblue;
+            padding: 15px;
+            border: 2px solid rgb(37, 38, 37);
+            border-radius: 10px;
+        }
+
+        .div {
+            background-color: lightpink;
+            padding: 15px;
+            border: 2px solid rgb(37, 38, 37);
+            border-radius: 10px;
+        }
+
+        .inc {
+            background-color: lightgray;
+            padding: 15px;
+            border: 2px solid rgb(37, 38, 37);
+            border-radius: 10px;
+        }
+
+        .clear {
+            background-color: red;
+            color: white;
+            padding: 15px;
+            border: 2px solid rgb(37, 38, 37);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form class="calculator">
+
+    <h1>Arithmetic Operations</h1>
+
+    <label>Number 1</label><br>
+    <input type="number" id="num1" placeholder="Enter Number 1">
+
+    <br>
+
+    <label>Number 2</label><br>
+    <input type="number" id="num2" placeholder="Enter Number 2">
+
+    <br>
+
+    <label>Result</label><br>
+    <input type="text" id="result" readonly placeholder="Result">
+
+    <br><br>
+
+    <!-- Internal JavaScript -->
+    <button type="button" class="add" onclick="addition()">
+        Addition
+    </button>
+
+    <button type="button" class="sub" onclick="subtraction()">
+        Subtraction
+    </button>
+
+    <br>
+
+    <!-- External JavaScript -->
+    <button type="button" class="mul" onclick="multiplication()">
+        Multiplication
+    </button>
+
+    <button type="button" class="div" onclick="division()">
+        Division
+    </button>
+
+    <br>
+
+    <!-- JavaScript -->
+    <button type="button" class="inc" onclick="increment()">
+        Increment
+    </button>
+
+    <button type="button" class="inc" onclick="decrement()">
+        Decrement
+    </button>
+
+    <br>
+
+    <button type="button" class="clear" onclick="clearAll()">
+        Clear
+    </button>
+
+</form>
+
+
+<!-- Internal JavaScript -->
+<script>
+
+    function addition() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+
+        document.getElementById("result").value = a + b;
+    }
+
+    function subtraction() {
+        let a = Number(document.getElementById("num1").value);
+        let b = Number(document.getElementById("num2").value);
+
+        document.getElementById("result").value = a - b;
+    }
+
+</script>
+
+
+<!-- External JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
