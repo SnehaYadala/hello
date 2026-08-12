@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Restricted Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #23e0e0;
+            margin: 15px;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #141615;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 1px solid #9b1382;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #17e709;
+            color: white;
+            border: 2px solid #169c9c;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>Age Restricted Form</h1>
+
+        <form class="container" id="feedform">
+
+            <label for="name_id">Name:</label>
+            <input type="text" id="name_id" name="name_na" required>
+
+            <label for="email_id">Email:</label>
+            <input type="email" id="email_id" name="email_na" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </main>
+
+    <script>
+
+        document.getElementById("feedform").addEventListener("submit", demofunction);
+
+        function demofunction(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name_id").value;
+            let dob = document.getElementById("dob").value;
+
+            let birthDate = new Date(dob);
+            let today = new Date();
+
+            let age = today.getFullYear() - birthDate.getFullYear();
+
+            let month = today.getMonth() - birthDate.getMonth();
+
+            if (month < 0 || 
+                (month === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+
+                alert("You are not eligible. Your age is " + age + ".");
+
+            } else {
+
+                alert(name + ", Form submitted successfully! Your age is " + age + ".");
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>
